@@ -1,3 +1,4 @@
+//Test array for refactored functions.
 const cartList = [
     {id:1, nrItems:1, product:{name:"ProductName1", id:1 , price:2, description:"",imgURL:""}},
     {id:2, nrItems:1, product:{name:"ProductName2", id:2 , price:3, description:"",imgURL:""}},
@@ -24,7 +25,7 @@ const findItemInCart = (InItemId) => {
 }
 
 // New findItem after refactoring using standard "findIndex" function.
-const newFindItem = (inItemId) => {
+const newFindItemInCart = (inItemId) => {
     const itemFound = cartList.findIndex(item => item.id === inItemId)
     if (itemFound !== -1) {
         return itemFound
@@ -64,15 +65,24 @@ const newRemoveItemFromCart = (inItemId) => {
     }
 }
 
+module.exports = {
+    findItemInCart,
+    newFindItemInCart,
+    calcTotalCartPrice,
+    newCalcTotalCartPrice,
+    removeItemFromCart,
+    newRemoveItemFromCart,
+    cartList,
+}
 
-console.log(findItemInCart(1))
-console.log(newFindItem(1))
+// console.log(findItemInCart(1))
+// console.log(newFindItemInCart(1))
 
-console.log("next ---")
+// console.log("next ---")
 
-console.log(calcTotalCartPrice(cartList))
-console.log(newCalcTotalCartPrice(cartList))
+// console.log(calcTotalCartPrice(cartList))
+// console.log(newCalcTotalCartPrice(cartList))
 
-console.log(removeItemFromCart(1))
-console.log("next ---")
-console.log(newRemoveItemFromCart(1))
+// console.log(removeItemFromCart(1))
+// console.log("next ---")
+// console.log(newRemoveItemFromCart(1))
